@@ -1,0 +1,4 @@
+[*.{lisp,asd,el}]
+indent_style = space
+indent_size = none
+tab_width = none
