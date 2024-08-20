@@ -139,5 +139,11 @@
   (global-set-key [remap yank] 'consult-yank-from-kill-ring)
   (global-set-key [remap yank-pop] 'consult-yank-pop))
 
+;; if we're completing with grep, allow editing results
+(use-package wgrep
+  :straight t
+  :config
+  (require 'wgrep))
+
 (provide 'config-completion)
 ;;; config-completion.el ends here

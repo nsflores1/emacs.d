@@ -36,5 +36,10 @@
   :diminish magit-todos-mode
   :config (magit-todos-mode 1))
 
+;; add git's undos to the emacs undo feature
+;; requires being manually invoked sadly
+(use-package git-undo
+  :straight t)
+
 (provide 'code-git)
 ;;; code-git.el ends here

@@ -9,9 +9,9 @@
       make-backup-files t
       kept-new-versions 9
       kept-old-versions 6
-      auto-save-timeout 20
-      auto-save-interval 200
-      auto-save-default t
+      ;; auto-save-timeout 20
+      ;; auto-save-interval 200
+      auto-save-default nil
       delete-auto-save-files t
       delete-by-moving-to-trash t
       vc-make-backup-files t
