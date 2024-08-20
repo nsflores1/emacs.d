@@ -6,6 +6,11 @@
 ;; run a message
 (message "[init.el] Emacs is starting up, init.el now being read")
 
+;; early-init MUST be loaded and may not have been if Emacs
+;; is a version older than 27.1
+(when (version< emacs-version "27.1")
+  (error "[init.el] Your Emacs is outdated; this config requires 27.1 or higher to run"))
+
 ;; set where our stuff is
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (setq custom-file (locate-user-emacs-file "custom.el"))
@@ -29,6 +34,7 @@
 (require 'config-session)
 (require 'config-completion)
 (require 'config-ibuffer)
+(require 'config-dired)
 (require 'config-spelling)
 
 (require 'code-syntax)
