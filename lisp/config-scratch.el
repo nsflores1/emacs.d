@@ -20,5 +20,10 @@
 (setq inhibit-startup-message t
       initial-scratch-message (concat (personal/prefix-comment  (cowsay-string "Emacs has finished starting." "tux")) "\n\n"))
 
+;; redefine the annoying GNU advertisement
+(defun display-startup-echo-area-message ()
+  "Gets rid of that annoying GNU advertisement."
+       (message "[init.el] Init complete. Get out there!"))
+
 (provide 'config-scratch)
 ;;; config-scratch.el ends here

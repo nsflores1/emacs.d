@@ -27,10 +27,21 @@
   (dimmer-configure-helm)
   (dimmer-mode t))
 
+;; minibuffer overview of the file
+(use-package minimap
+  :straight t
+  :if window-system
+  :diminish minimap-mode
+  :config
+  (setq minimap-width-fraction 0.1
+        minimap-minimum-width 15
+        minimap-window-location 'left
+        minimap-update-delay 0.05
+        minimap-disable-mode-line t))
+
 ;; add a beacon when we move into a new buffer
 (use-package beacon
   :straight t
-  :if window-system
   :diminish beacon-mode
   :config
   (beacon-mode 1))
@@ -38,7 +49,6 @@
 ;; flash the text that we're looking at when editing
 (use-package goggles
   :straight t
-  :if window-system
   :diminish goggles-mode
   :hook ((prog-mode text-mode) . goggles-mode)
   :config
@@ -47,9 +57,9 @@
 ;; blink and fade the cursor so it never fully goes away
 ;; todo: this doesn't seem to work anymore
  (use-package pulsing-cursor
-   :straight (:host github :repo "jasonjckn/pulsing-cursor")
+   :straight (:host github :repo "abrichr/pulsing-cursor")
+   :demand t
    :if window-system
-   :diminish pulsing-cursor-mode
    :config
    (pulsing-cursor-mode +1))
 
@@ -64,18 +74,17 @@
 (use-package highlight-indent-guides
   ;; the original package has a bug with background colors,
   ;; this fork fixes it.
-  :straight (:host github :repo "Dickby/highlight-indent-guides")
-  :if window-system
+  :straight (:host github :repo "getong/highlight-indent-guides")
   :diminish highlight-indent-guides-mode
   :hook (prog-mode . highlight-indent-guides-mode)
   :config
-  (setq highlight-indent-guides-method 'bitmap))
+  (setq highlight-indent-guides-method 'character))
 
 ;; display system status in the minibuffer when we're graphical
 ;; note: this package is currently broken, try and fix it
 (use-package symon
   :disabled t
-  :straight (:host github :repo "nsflores1/symon")
+  :straight (:host gitlab :repo "stanleyj/symon")
   :if window-system
   :config
   (require 'symon)

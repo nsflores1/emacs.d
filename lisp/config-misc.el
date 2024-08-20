@@ -5,8 +5,9 @@
 ;; unrelated settings
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; doesn't work in older emacs
-;;(when (boundp 'use-short-answers)
-;;  (setopt use-short-answers t))
+(when (version< emacs-version "29")
+  (when (boundp 'use-short-answers)
+      (setopt use-short-answers t)))
 
 ;; force compliation to look nicer
 (add-hook 'complilation-mode-hook 'visual-line-mode)
@@ -44,10 +45,16 @@
 ;; when Emacs starts outside the terminal, we don't get ssh-agent
 ;; TODO: ensure this is configured correctly
 (use-package keychain-environment
-  :disabled t
+  :if *is-a-linux*
   :straight t
   :config
   (keychain-refresh-environment))
+
+;; don't use org mode but want it to look less ugly when I have to
+(use-package org-bullets
+  :straight t
+  :diminish org-bullets-mode
+  :hook (org-mode . (lambda () (org-bullets-mode 1))))
 
 ;; on linux, let us edit with sudo
 (use-package sudo-edit

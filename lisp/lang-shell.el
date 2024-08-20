@@ -5,6 +5,7 @@
 ;; add vterm support, if we're on a system that supports it
 (use-package vterm
   :straight t
+  :if (or *is-a-linux* *is-a-mac*)
   :config
   (setq vterm-kill-buffer-on-exit t
         vterm-ignore-blink-cursor t))
@@ -12,6 +13,7 @@
 ;; actually, let's use vterm in eshell!
 (use-package eshell-vterm
   :straight t
+  :if (or *is-a-linux* *is-a-mac*)
   :diminish eshell-vterm-mode
   :after eshell
   :config
@@ -21,6 +23,7 @@
 ;; make that less miserable
 (use-package eshell-did-you-mean
   :straight t
+  :if (or *is-a-linux* *is-a-mac*)
   :after eshell
   :config
   (eshell-did-you-mean-setup))
@@ -36,6 +39,15 @@
   :after eshell
   :diminish eshell-autosuggest-mode
   :hook (eshell-mode . esh-autosuggest-mode))
+
+;; eshell can use fish scripts
+(use-package fish-completion
+  :straight t
+  :after eshell
+  :diminish global-fish-completion-mode
+  :if (and (executable-find "fish") (or *is-a-linux* *is-a-mac*))
+  :config
+  (global-fish-completion-mode))
 
 (use-package eshell-syntax-highlighting
   :straight t

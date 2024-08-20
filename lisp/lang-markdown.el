@@ -11,6 +11,11 @@
   :config
   (add-auto-mode 'markdown-mode "\\.md\\.html\\'"))
 
+;; get a free table of contents
+(use-package markdown-toc
+  :straight t
+  :after markdown-mode)
+
 ;; when taking notes it's nice to use dice notation
 (use-package decide-mode
   :straight (:host github :repo "lifelike/decide-mode"))
