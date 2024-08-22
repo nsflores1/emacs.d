@@ -97,12 +97,6 @@
       uniquify-ignore-buffers-re "^\\*"
       uniquify-buffer-name-style 'reverse)
 
-;; show us where the fill column is graphically
-(when (boundp 'display-fill-column-indicator)
-  (setq-default indicate-buffer-boundaries 'left
-                display-fill-column-indicator-character '(ascii 124))
-  (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode))
-
 ;; display line numbers mode when needed
 (when (fboundp 'display-line-numbers-mode)
   (setq-default display-line-numbers-width 3)

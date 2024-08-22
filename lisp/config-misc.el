@@ -7,7 +7,11 @@
 ;; doesn't work in older emacs
 (when (version< emacs-version "29")
   (when (boundp 'use-short-answers)
-      (setopt use-short-answers t)))
+    (setopt use-short-answers t)))
+
+;; show the fill column
+(setq-default display-fill-column-indicator-column 80)
+(add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
 
 ;; force compliation to look nicer
 (add-hook 'complilation-mode-hook 'visual-line-mode)
