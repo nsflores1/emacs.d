@@ -29,6 +29,10 @@
   :diminish rainbow-delimiters-mode
   :hook (prog-mode . rainbow-delimiters-mode))
 
+;; color indented regions on command
+(use-package prism
+  :straight (:host github :repo "alphapapa/prism.el"))
+
 ;; make colors match their amounts
 (use-package rainbow-mode
   :straight t
@@ -48,6 +52,21 @@
   :straight t
   :diminish highlight-numbers-mode
   :hook (prog-mode . highlight-numbers-mode))
+
+;; highlight the thing we're idling on, if anything
+(use-package idle-highlight-mode
+  :straight t
+  :diminish idle-highlight-mode
+  :config (setq idle-highlight-idle-time 0.6)
+  :hook ((prog-mode text-mode) . idle-highlight-mode))
+
+;; highlight the current top level form
+(use-package topsy
+  :straight t
+  :disabled t
+  :hook ((prog-mode . topsy-mode)
+         (magit-section-mode . topsy-mode)))
+;; TODO: this *really* needs to be specified by major mode.
 
 ;; show page breaks
 (use-package page-break-lines
