@@ -145,5 +145,15 @@
   :config
   (require 'wgrep))
 
+;; add general all-purpose history
+;; this is needed because while completion menus remember frequency,
+;; they're not very good at remembering what we were actually doing.
+(use-package dogears
+  :straight t)
+
+;; TODO: check bookmark status, doesn't seem to work?
+;; TODO: add binds for dogears?
+
+
 (provide 'config-completion)
 ;;; config-completion.el ends here
