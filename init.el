@@ -55,6 +55,13 @@
 ;; also, set up a mode for web code editing (css, html)
 ;; would be nice to have something nice for project management too.
 
+;; TODO: add something to deal with managing state (open buffers)
+;; across emacs restarts.
+
+;; TODO: add a MATLAB, R, and Stata mode
+
+;; TODO: consider rewriting the entire config in org-mode
+
 ;; put a silly image in our scratch buffer
 (require 'config-scratch)
 
