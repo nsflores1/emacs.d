@@ -11,4 +11,10 @@ Maybe, it'll work outside of Markdown with a good regular expression?
     ``` code
     code
     ```
+    
+Hey, what about something else?
+
+``` emacs-lisp 
+(print "hello, world!")
+```
 

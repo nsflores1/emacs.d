@@ -5,12 +5,20 @@ This repository contains the setup for an Emacs configuration, mainly set up for
 - Python
 - General editing
 
-It works best on macOS and in a graphical frame. For best performance, use Mitsuharu's Emacs macOS port, or a pureGTK build on Linux. Otherwise, things will not work as expected. Also, `git` must be installed, and for certain languages to work other packages are expected to be installed.
-Currently, it works on Emacs versions `29` and `28`, tested on macOS and Debian. 
+It works best on macOS and in a graphical frame. For best performance, use Mitsuharu's Emacs macOS port, or a pureGTK build on Linux. Currently, it works on Emacs versions `29` and `28`, tested on macOS and Debian. 
 Other systems may experience issues.
 
 ## How to Install
-`git clone` this into `~/.emacs.d`, then start Emacs. When you want to replace Emacs, run the script `clean.sh` in the config directory.
+Firstly, make sure the following programs are installed:
+- `python`, any version that's not `python3`
+- `ripgrep` (optional)
+- `git`, used by `straight.el` for managing packages
+- `gcc` and `cmake`, used for `vterm` (optional)
+- `fish`, used to make completion files for `eshell` (optional)
+- `aspell`, used for enabling spellcheck (optional)
+- Any specific language servers needed by certain modes
+
+`git clone` this into `~/.emacs.d`, then start Emacs. This will take some time on initial startup, but after the first boot this process should become substantially faster. It works on *my* machine, but I make no guarantees that this will be the case on yours!
 
 ## Things To Improve
 - Fix the theming situation
