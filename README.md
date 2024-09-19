@@ -16,7 +16,15 @@ Firstly, make sure the following programs are installed:
 - `gcc` and `cmake`, used for `vterm` (optional)
 - `fish`, used to make completion files for `eshell` (optional)
 - `aspell`, used for enabling spellcheck (optional)
-- Any specific language servers needed by certain modes
+- Any specific language servers needed by certain modes:
+  - Shell: `checkbashisms`
+  - LaTeX: `texlab`
+  - Common Lisp: `sbcl` (lang server broken for this language)
+  - Markdown: `markdown`
+  - Rust: `rust-analyzer`
+  - Python: `black`
+  
+Ideally in a future version of this config, it would prompt you to install these, but that's currently not the case. Sorry for any frustration this may inadvertently cause.
 
 `git clone` this into `~/.emacs.d`, then start Emacs. This will take some time on initial startup, but after the first boot this process should become substantially faster. It works on *my* machine, but I make no guarantees that this will be the case on yours!
 
