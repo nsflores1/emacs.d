@@ -33,7 +33,7 @@
 (require 'config-editor)
 (require 'config-session)
 (require 'config-completion)
-(require 'config-ibuffer)
+(require 'config-buffer)
 (require 'config-dired)
 (require 'config-spelling)
 
@@ -50,6 +50,7 @@
 (require 'lang-rust)
 (require 'lang-python)
 (require 'lang-config)
+(require 'lang-matlab)
 
 ;; TODO: add a Haskell mode maybe? improve rust-mode
 ;; also, set up a mode for web code editing (css, html)
@@ -58,7 +59,7 @@
 ;; TODO: add something to deal with managing state (open buffers)
 ;; across emacs restarts.
 
-;; TODO: add a MATLAB, R, and Stata mode
+;; TODO: add a R and Stata mode
 
 ;; TODO: consider rewriting the entire config in org-mode
 
