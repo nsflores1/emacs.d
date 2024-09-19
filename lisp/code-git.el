@@ -34,7 +34,8 @@
   :straight t
   :after magit
   :diminish magit-todos-mode
-  :config (magit-todos-mode 1))
+  :init
+  (magit-todos-mode 1))
 
 ;; add git's undos to the emacs undo feature
 ;; requires being manually invoked sadly
