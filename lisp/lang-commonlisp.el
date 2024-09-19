@@ -5,6 +5,7 @@
 ;; slime is bad, use sly instead
 (use-package sly
   :straight t
+  :ensure-system-package sbcl
   :diminish sly-mode
   :config
   (setq sly-protocol-version 'ignore

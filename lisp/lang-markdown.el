@@ -5,6 +5,7 @@
 ;; install this mode
 (use-package markdown-mode
   :straight t
+  :ensure-system-package markdown
   ;; sometimes we use the github version
   :mode ("\\.md$" . gfm-mode)
   :hook (gfm-mode . visual-line-mode)

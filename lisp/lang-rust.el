@@ -17,6 +17,7 @@
 ;; get better support for flycheck
 (use-package flycheck-rust
   :straight t
+  :ensure-system-package rust-analyzer
   :after rust-mode
   :hook (flycheck-mode . flycheck-rust-setup))
 

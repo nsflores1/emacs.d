@@ -12,6 +12,7 @@
 ;; format python correctly
 (use-package blacken
   :straight t
+  :ensure-system-package black
   :diminish blacken-mode
   :hook ((python-mode . blacken-mode)))
 
