@@ -1,4 +1,4 @@
-# Personal `emacs.d`
+# Personal `emacs.d` 🏡
 This repository contains the setup for an Emacs configuration, mainly set up for my own personal use. It has features well suited for:
 - Rust
 - Common Lisp
@@ -8,7 +8,7 @@ This repository contains the setup for an Emacs configuration, mainly set up for
 It works best on macOS and in a graphical frame. For best performance, use Mitsuharu's Emacs macOS port, or a pureGTK build on Linux. Currently, it works on Emacs versions `29` and `28`, tested on macOS and Debian. 
 Other systems may experience issues.
 
-## How to Install
+## How to Install 💻
 Firstly, make sure the following programs are installed:
 - `python`, any version that's not `python3`
 - `ripgrep` (optional)
@@ -28,6 +28,6 @@ Ideally in a future version of this config, it would prompt you to install these
 
 `git clone` this into `~/.emacs.d`, then start Emacs. This will take some time on initial startup, but after the first boot this process should become substantially faster. It works on *my* machine, but I make no guarantees that this will be the case on yours!
 
-## Things To Improve
+## Things To Improve 🤔
 - Fix the theming situation
 - Consider using Markdown for the entire config
