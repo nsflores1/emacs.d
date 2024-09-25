@@ -68,6 +68,12 @@
          (magit-section-mode . topsy-mode)))
 ;; TODO: this *really* needs to be specified by major mode.
 
+;; highlight all links on screen
+;; TODO: reconsider this
+(use-package link-hint
+  :straight t
+  :disabled t)
+
 ;; show page breaks
 (use-package page-break-lines
   :straight t

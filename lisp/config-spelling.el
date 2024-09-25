@@ -23,5 +23,9 @@
                   'c-aspell-dynamic))
     (add-to-list 'flycheck-checker mode)))
 
+;; TODO: check this mode out
+(use-package jinx
+  :straight t)
+
 (provide 'config-spelling)
 ;;; config-spelling.el ends here
