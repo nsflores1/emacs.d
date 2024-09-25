@@ -10,6 +10,17 @@
   (setq vterm-kill-buffer-on-exit t
         vterm-ignore-blink-cursor t))
 
+;; actually, in case vterm doesn't work,
+;; let's add another terminal emulator
+;; TODO: evaluate this vs vterm
+(use-package eat
+  :straight (:host codeberg :repo "akib/emacs-eat")
+  :diminish eat-eshell-mode eat-eshell-visual-command-mode
+  :custom (eat-terminal-name "xterm")
+  :config
+  (eat-eshell-mode)
+  (eat-eshell-visual-command-mode))
+
 ;; actually, let's use vterm in eshell!
 (use-package eshell-vterm
   :straight t
