@@ -85,11 +85,23 @@
                               (setq-local corfu-auto nil)
                               (corfu-mode)))
   :config
+  ;; use corfu in the minibuffer
+  (defun corfu-enable-always-in-minibuffer ()
+    (unless (or (bound-and-true-p mct--active)
+                  (bound-and-true-p vertico--input))
+    (setq-local corfu-auto nil)
+    (corfu-mode 1)))
+  (add-hook 'minibuffer-setup-hook #'corfu-enable-always-in-minibuffer 1)
   ;; automatic completion!
   (setq corfu-auto t
-        corfu-quit-no-match 'separator)
+        corfu-quit-no-match 'separator
+        corfu-echo-documentation nil)
   ;; turn on corfu's plugins
   (corfu-history-mode 1))
+
+;; disable accidentally hitting tab
+(setq tab-always-indent 'complete
+      completion-cycle-threshold nil)
 
 ;; we like corfu's miniframes, but they don't work on terminal
 ;; this extension lets you do something eles
@@ -109,7 +121,24 @@
   :config
   (require 'pcmpl-args))
 
-;; TODO: look into cape at some point
+;; we need to be able to use company backends,
+;; so let's do that! cape!
+;; TODO: consider fixing this
+(use-package cape
+  :straight t
+  :after corfu
+  :bind ("C-c p" . cape-prefix-map)
+  :init
+  (add-hook 'completion-at-point-functions #'cape-dabbrev)
+  (add-hook 'completion-at-point-functions #'cape-file)
+  (add-hook 'completion-at-point-functions #'cape-elisp-block)
+  (add-hook 'completion-at-point-functions #'cape-history)
+  (when (> emacs-major-version 29)
+    (add-hook 'completion-at-point-functions #'cape-emoji))
+  (add-hook 'completion-at-point-functions #'cape-tex)
+  (setq-local completion-at-point-functions
+              (mapcar #'cape-company-to-capf
+                      (list #'company-files #'company-keywords #'company-dabbrev))))
 
 ;; make sure to show small icons next to corfu completions
 (use-package kind-icon
@@ -118,7 +147,8 @@
   :config
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter)
   (setq kind-icon-use-icons nil
-        kind-icon-blend-background t))
+        kind-icon-blend-background nil
+        kind-icon-default-face 'corfu-default))
 
 ;; only use tabs with few candidates
 (setq completion-cycle-threshold 3)
@@ -153,7 +183,6 @@
 
 ;; TODO: check bookmark status, doesn't seem to work?
 ;; TODO: add binds for dogears?
-
 
 (provide 'config-completion)
 ;;; config-completion.el ends here

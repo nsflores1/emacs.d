@@ -16,7 +16,8 @@
   ;; add this to the hook.
   :hook ((rust-mode . eglot-ensure)
          (LaTeX-mode . eglot-ensure)
-         (common-lisp-mode . eglot-ensure)))
+         (common-lisp-mode . eglot-ensure)
+         (go-mode . eglot-ensure)))
 
 ;; we need extra completions for consult with eglot
 (use-package consult-eglot
@@ -39,7 +40,6 @@
   (apheleia-global-mode +1))
 
 ;; todo: look into puni for manipulating code syntax
-
 
 (provide 'code-syntax)
 ;;; code-syntax.el ends here

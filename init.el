@@ -51,6 +51,7 @@
 (require 'lang-python)
 (require 'lang-config)
 (require 'lang-matlab)
+(require 'lang-go)
 
 ;; TODO: add a Haskell mode maybe? improve rust-mode
 ;; also, set up a mode for web code editing (css, html)

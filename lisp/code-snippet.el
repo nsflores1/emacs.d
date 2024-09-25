@@ -21,5 +21,9 @@
   :config
   (require 'common-lisp-snippets))
 
+(use-package yasnippet-go
+  :straight (:host github :repo "dominikh/yasnippet-go")
+  :config)
+
 (provide 'code-snippet)
 ;;; code-snippet.el ends here
