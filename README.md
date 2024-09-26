@@ -5,26 +5,27 @@ This repository contains the setup for an Emacs configuration, mainly set up for
 - Python
 - General editing
 
-It works best on macOS and in a graphical frame. For best performance, use Mitsuharu's Emacs macOS port, or a pureGTK build on Linux. Currently, it works on Emacs versions `29` and `28`, tested on macOS and Debian. 
+It works best on macOS and in a graphical frame (ideally, compile Emacs with Xwidgets). For best performance, use Mitsuharu's Emacs macOS port, or a pureGTK build on Linux. Currently, it works on Emacs versions `29` and `28`, tested on macOS and Debian Stable. 
 Other systems may experience issues.
 
 ## How to Install 💻
 Firstly, make sure the following programs are installed:
-- `python`, any version that's not `python3`
+- `python`, any version that's not `python2`
 - `ripgrep` (optional)
-- `git`, used by `straight.el` for managing packages
+- `git` (used by `straight.el` for managing packages)
 - `gcc` and `cmake`, used for `vterm` (optional)
 - `fish`, used to make completion files for `eshell` (optional)
 - `aspell`, used for enabling spellcheck (optional)
-- Any specific language servers needed by certain modes:
+- Any specific language servers/packages needed by certain modes:
   - Shell: `checkbashisms`
   - LaTeX: `texlab`
-  - Common Lisp: `sbcl` (lang server broken for this language)
+  - Common Lisp: `sbcl`
   - Markdown: `markdown`
   - Rust: `rust-analyzer`
   - Python: `black`
+  - Go: `gopls`
   
-Ideally in a future version of this config, it would prompt you to install these, but that's currently not the case. Sorry for any frustration this may inadvertently cause.
+Ideally in a future version of this config, it would prompt you to install these, but that's currently not the case. Sorry for any frustration this may inadvertently cause. I believe all scripts are reasonably POSIX compliant, but haven't tested this. 
 
 `git clone` this into `~/.emacs.d`, then start Emacs. This will take some time on initial startup, but after the first boot this process should become substantially faster. It works on *my* machine, but I make no guarantees that this will be the case on yours!
 

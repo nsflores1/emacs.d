@@ -47,8 +47,6 @@
 
 ;; Install straight.el, if possible
 ;; this will error if git isn't detected
-;; TODO: auto fallback to package.el
-;; TODO: consider switching to elpaca? might be too unstable...
 (if (not (or *is-a-windows* (not (executable-find "git"))))
     (progn (defvar bootstrap-version)
            (let ((bootstrap-file
