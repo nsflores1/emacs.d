@@ -5,7 +5,10 @@
 (use-package go-mode
   :straight t
   :config
-  (add-hook 'before-save-hook 'gofmt-before-save))
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  :init
+  ;; fix annoying issues with GOPATH
+  (setenv "GOPATH" (concat (getenv "HOME") ".go")))
 
 ;; eldoc in modeline
 (use-package go-eldoc

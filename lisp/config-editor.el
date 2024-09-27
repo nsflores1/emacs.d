@@ -63,10 +63,13 @@
 ;; highlight the current top level form
 (use-package topsy
   :straight t
-  :disabled t
-  :hook ((prog-mode . topsy-mode)
+  :hook ((go-mode . topsy-mode)
+         (python-mode . topsy-mode)
+         (LaTeX-mode . topsy-mode)
+         (matlab-mode . topsy-mode)
+         (rust-mode . topsy-mode)
+         (lisp-mode . topsy-mode)
          (magit-section-mode . topsy-mode)))
-;; TODO: this *really* needs to be specified by major mode.
 
 ;; highlight all links on screen
 ;; TODO: reconsider this

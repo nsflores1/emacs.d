@@ -7,7 +7,8 @@
   :straight t
   :hook (after-init . global-flycheck-mode)
   :config
-  (add-to-list 'flycheck-disabled-checkers 'rust))
+  (setq-default flycheck-disabled-checkers
+                '(rust go-build go-vet)))
 
 ;; set up eglot
 (use-package eglot
